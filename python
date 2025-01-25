@@ -1,0 +1,479 @@
+1-20: Basic Operations
+
+Sum of Two Numbers
+INPUT: a, b
+OUTPUT: a + b
+
+Find Larger of Two Numbers
+
+INPUT: a, b
+IF a > b:
+    RETURN a
+ELSE:
+    RETURN b
+
+Check Odd or Even
+
+INPUT: n
+IF n % 2 == 0:
+    PRINT "Even"
+ELSE:
+    PRINT "Odd"
+
+Factorial of a Number
+
+INPUT: n
+factorial = 1
+FOR i = 1 TO n:
+    factorial = factorial * i
+RETURN factorial
+Generate Fibonacci Sequence
+
+INPUT: n
+SET first = 0, second = 1
+PRINT first, second
+FOR i = 2 TO n:
+    next = first + second
+    PRINT next
+    first = second
+    second = next
+
+Check Prime Number
+INPUT: n
+IF n <= 1:
+    RETURN "Not Prime"
+FOR i = 2 TO sqrt(n):
+    IF n % i == 0:
+        RETURN "Not Prime"
+RETURN "Prime"
+
+Reverse a Number
+INPUT: n
+reversed = 0
+WHILE n > 0:
+    digit = n % 10
+    reversed = reversed * 10 + digit
+    n = n // 10
+RETURN reversed
+
+Check Palindrome Number
+INPUT: n
+reversed = reverse(n)
+IF reversed == n:
+    RETURN "Palindrome"
+ELSE:
+    RETURN "Not Palindrome"
+
+Find GCD
+
+INPUT: a, b
+WHILE b != 0:
+    temp = b
+    b = a % b
+    a = temp
+RETURN a
+
+LCM of Two Numbers
+
+INPUT: a, b
+RETURN (a * b) / GCD(a, b)
+
+
+Sum of Digits
+INPUT: n
+sum = 0
+WHILE n > 0:
+    sum = sum + (n % 10)
+    n = n // 10
+RETURN sum
+
+Check Leap Year
+
+INPUT: year
+IF (year % 4 == 0 AND year % 100 != 0) OR (year % 400 == 0):
+    RETURN "Leap Year"
+ELSE:
+    RETURN "Not Leap Year"
+
+Find Power (a^b)
+
+INPUT: base, exponent
+result = 1
+FOR i = 1 TO exponent:
+    result = result * base
+RETURN result
+
+Sum of First N Natural Numbers
+INPUT: n
+RETURN n * (n + 1) / 2
+
+Decimal to Binary Conversion
+
+INPUT: n
+binary = ""
+WHILE n > 0:
+    binary = (n % 2) + binary
+    n = n // 2
+RETURN binary
+
+Binary to Decimal Conversion
+
+INPUT: binary
+decimal = 0
+FOR i = 0 TO length(binary)-1:
+    decimal = decimal + (binary[i] * (2 ^ position))
+RETURN decimal
+
+Check Armstrong Number
+INPUT: n
+sum = 0
+digits = count_digits(n)
+WHILE n > 0:
+    digit = n % 10
+    sum = sum + (digit ^ digits)
+    n = n // 10
+IF sum == original_number:
+    RETURN "Armstrong"
+ELSE:
+    RETURN "Not Armstrong"
+
+Print Multiplication Table
+
+INPUT: n
+FOR i = 1 TO 10:
+    PRINT n * i
+
+Swap Two Numbers Without Temporary Variable
+
+INPUT: a, b
+a = a + b
+b = a - b
+a = a - b
+
+Count Number of Digits
+
+INPUT: n
+count = 0
+WHILE n > 0:
+    count = count + 1
+    n = n // 10
+RETURN count
+
+21-40: Array Operations
+
+Sum of Elements in an Array
+
+INPUT: array[]
+sum = 0
+FOR each element IN array:
+    sum = sum + element
+RETURN sum
+
+Find Maximum in an Array
+INPUT: array[]
+max_value = array[0]
+FOR each element IN array:
+    IF element > max_value:
+        max_value = element
+RETURN max_value
+
+Find Minimum in an Array
+
+INPUT: array[]
+min_value = array[0]
+FOR each element IN array:
+    IF element < min_value:
+        min_value = element
+RETURN min_value
+
+Reverse an Array
+
+INPUT: array[]
+RETURN array[::-1]
+
+Find Second Largest in an Array
+
+INPUT: array[]
+largest = second_largest = -∞
+FOR each element IN array:
+    IF element > largest:
+        second_largest = largest
+        largest = element
+    ELSE IF element > second_largest:
+        second_largest = element
+RETURN second_largest
+
+Rotate an Array Left
+
+INPUT: array[], k
+rotated_array = array[k:] + array[:k]
+RETURN rotated_array
+
+Check if Array is Sorted
+
+INPUT: array[]
+FOR i = 0 TO length(array)-2:
+    IF array[i] > array[i+1]:
+        RETURN False
+RETURN True
+
+Find Missing Number
+
+INPUT: array[] with numbers 1 to n
+n = length(array) + 1
+total_sum = n * (n + 1) / 2
+array_sum = sum of elements in array
+RETURN total_sum - array_sum
+
+Find Intersection of Two Arrays
+
+INPUT: array1[], array2[]
+intersection = []
+FOR each element IN array1:
+    IF element IN array2:
+        intersection.append(element)
+RETURN intersection
+
+Merge Two Sorted Arrays
+
+INPUT: array1[], array2[]
+i = j = 0
+result = []
+WHILE i < length(array1) AND j < length(array2):
+    IF array1[i] < array2[j]:
+        result.append(array1[i])
+        i = i + 1
+    ELSE:
+        result.append(array2[j])
+        j = j + 1
+APPEND remaining elements
+RETURN result
+
+41-60: String Operations
+Reverse a String
+
+INPUT: string
+RETURN string[::-1]
+
+Check Palindrome String
+
+INPUT: string
+IF string == reverse(string):
+    RETURN "Palindrome"
+ELSE:
+    RETURN "Not Palindrome"
+
+Count Vowels in a String
+
+INPUT: string
+vowels = "aeiouAEIOU"
+count = 0
+FOR each character IN string:
+    IF character IN vowels:
+        count = count + 1
+RETURN count
+
+61-80: String Operations (Continued)
+
+Remove Duplicates from a String
+
+INPUT: string
+result = ""
+FOR char IN string:
+    IF char NOT IN result:
+        result = result + char
+RETURN result
+
+Check if Two Strings are Anagrams
+
+INPUT: string1, string2
+IF sort(string1) == sort(string2):
+    RETURN "Anagram"
+ELSE:
+    RETURN "Not Anagram"
+
+Find the First Non-Repeating Character
+
+INPUT: string
+frequency_map = {}
+FOR char IN string:
+    frequency_map[char] = frequency_map.get(char, 0) + 1
+FOR char IN string:
+    IF frequency_map[char] == 1:
+        RETURN char
+RETURN "No Non-Repeating Character"
+Count Words in a String
+
+INPUT: string
+words = string.split()
+RETURN length(words)
+Replace Spaces with Hyphens
+
+INPUT: string
+RETURN string.replace(" ", "-")
+
+Check if a String is a Substring of Another
+
+INPUT: string1, string2
+IF string2 IN string1:
+    RETURN "Substring"
+ELSE:
+    RETURN "Not Substring"
+
+Reverse Words in a String
+
+INPUT: string
+words = string.split()
+reversed_words = reverse(words)
+RETURN " ".join(reversed_words)
+
+Find the Longest Word in a String
+
+INPUT: string
+words = string.split()
+longest_word = ""
+FOR word IN words:
+    IF length(word) > length(longest_word):
+        longest_word = word
+RETURN longest_word
+
+Check if a String Contains Only Digits
+
+INPUT: string
+FOR char IN string:
+    IF char NOT IN "0123456789":
+        RETURN False
+RETURN True
+
+Capitalize First Letter of Each Word
+
+INPUT: string
+words = string.split()
+capitalized_words = []
+FOR word IN words:
+    capitalized_words.append(word.capitalize())
+RETURN " ".join(capitalized_words)
+
+Find All Permutations of a String
+
+INPUT: string
+IF length(string) == 1:
+    RETURN [string]
+result = []
+FOR i = 0 TO length(string):
+    char = string[i]
+    remaining = string[:i] + string[i+1:]
+    FOR perm IN permutations(remaining):
+        result.append(char + perm)
+RETURN result
+
+Count Specific Character in a String
+
+INPUT: string, char
+count = 0
+FOR c IN string:
+    IF c == char:
+        count = count + 1
+RETURN count
+
+Check if a String Contains Uppercase Letters
+
+INPUT: string
+FOR char IN string:
+    IF char IN "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        RETURN True
+RETURN False
+
+Find the Most Frequent Character
+
+INPUT: string
+frequency_map = {}
+FOR char IN string:
+    frequency_map[char] = frequency_map.get(char, 0) + 1
+most_frequent = max(frequency_map, key=frequency_map.get)
+RETURN most_frequent
+
+Convert a String to Lowercase
+
+INPUT: string
+RETURN string.lower()
+
+81-100: Algorithms and Miscellaneous
+Bubble Sort
+
+INPUT: array[]
+FOR i = 0 TO length(array)-1:
+    FOR j = 0 TO length(array)-i-1:
+        IF array[j] > array[j+1]:
+            SWAP array[j] WITH array[j+1]
+
+Binary Search
+INPUT: array[], target
+low = 0, high = length(array)-1
+WHILE low <= high:
+    mid = (low + high) // 2
+    IF array[mid] == target:
+        RETURN mid
+    ELSE IF array[mid] < target:
+        low = mid + 1
+    ELSE:
+        high = mid - 1
+RETURN -1
+
+Selection Sort
+
+INPUT: array[]
+FOR i = 0 TO length(array)-1:
+    min_index = i
+    FOR j = i+1 TO length(array):
+        IF array[j] < array[min_index]:
+            min_index = j
+    SWAP array[i] WITH array[min_index]
+
+Insertion Sort
+
+INPUT: array[]
+FOR i = 1 TO length(array)-1:
+    key = array[i]
+    j = i - 1
+    WHILE j >= 0 AND array[j] > key:
+        array[j+1] = array[j]
+        j = j - 1
+    array[j+1] = key
+Merge Sort
+
+INPUT: array[]
+IF length(array) <= 1:
+    RETURN array
+mid = length(array) // 2
+left = merge_sort(array[:mid])
+right = merge_sort(array[mid:])
+RETURN merge(left, right)
+
+Quick Sort
+
+INPUT: array[]
+IF length(array) <= 1:
+    RETURN array
+pivot = array[0]
+left = [x FOR x IN array[1:] IF x < pivot]
+right = [x FOR x IN array[1:] IF x >= pivot]
+RETURN quick_sort(left) + [pivot] + quick_sort(right)
+
+Dijkstra's Algorithm
+
+INPUT: graph, start_node
+SET distances = INFINITY for all nodes
+SET distances[start_node] = 0
+SET visited = []
+WHILE unvisited_nodes exist:
+    current_node = node with smallest distance
+    FOR each neighbor of current_node:
+        IF new_distance < distances[neighbor]:
+            UPDATE distances[neighbor]
+    ADD current_node to visited
+
+Count Number of Words in a Sentence
+
+INPUT: sentence
+RETURN len(sentence.split())
